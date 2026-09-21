@@ -5,73 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sawal Acharya</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            color: #222;
+            margin: 0;
+            padding: 40px 24px;
+            line-height: 1.5;
+        }
+        .layout {
+            display: flex;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: flex-start;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            flex: 0 0 240px;
+        }
+        .sidebar h1 {
+            font-size: 28px;
+            margin: 0 0 8px 0;
+        }
+        .sidebar .subtitle {
+            color: #555;
+            font-size: 15px;
+            margin: 0 0 20px 0;
+        }
+        .sidebar hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 16px 0;
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .sidebar nav a {
+            color: #1a5fb4;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .sidebar nav a:hover {
+            text-decoration: underline;
+        }
+        .sidebar img {
+            width: 100%;
+            max-width: 240px;
+            border-radius: 4px;
+        }
+
+        /* Main content */
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+        .content h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .content h3 {
+            font-size: 18px;
+            margin-top: 28px;
+        }
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        ul.publications {
+            list-style-type: disc;
+            padding-left: 22px;
+        }
         ul.publications li {
             margin-bottom: 15px;
+        }
+        a {
+            color: #1a5fb4;
+        }
+
+        @media (max-width: 700px) {
+            .layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                flex: 1 1 auto;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Sawal Acharya</h1>
-    <img src="boulder_image.jpg" alt="Sawal in Boulder Flatirons" style="width:250px;height:445px;">
+    <div class="layout">
+        <aside class="sidebar">
+            <h1>Sawal Acharya</h1>
+            <p class="subtitle">PhD Student in Computer Science, Johns Hopkins University</p>
+            <hr>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#teaching">Teaching</a>
+                <a href="blog.html">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </aside>
 
-    <p><b style="font-size: 15px;">About:</b> I am an incoming PhD student in Computer Science at Johns Hopkins University. I will be joining <a href="https://www.michaelkoberst.com">Professor Michael Oberst's group</a>.</p>
+        <main class="content">
+            <section id="about">
+                <h2>About</h2>
 
-    <p>I completed my masters in computational and mathematical engineering from Stanford. Before that, I studied applied mathematics at Columbia and conducted research in economics.</p>
+                <p>I am a PhD student in Computer Science at Johns Hopkins University. Previously, I finished my master's in Computational and Mathematical Engineering from Stanford. Before that, I studied applied math at Columbia and did research in development economics. 
 
-    <p><b>Research Interests:</b> I am particularly interested in developing principled frameworks for assessing the reliability of data-driven models in healthcare. This includes quantifying uncertainty, establishing statistical guarantees, and/or enhancing model interpretability, properties that are essential for reliable clinical decision-making. In the process, I draw on ideas from machine learning, causal inference, and statistics.</p>
+                <p><b>Research Interests:</b> My main interest lies in developing methods to evaluate the reliability of AI systems, with a primary focus on healthcare and a secondary focus on social sciences.
+                      The overarching goal is to ensure that AI systems can be deployed reliably for real-world decision making. In the process, I mainly draw on ideas from machine learning, statistics, and causal inference.
 
-    <p>The above interest is a culmination of my previous experiences in probabilistic modeling (Bayesian ML and stochastic simulation), optimization, and empirical evaluations of LLM-powered causal inference.</p>
+                <p><b>Other Interests:</b> I like reading books, running, biking, and hiking in the mountains. You can read about my outdoor experiences <a href="blog.html#outdoor-adventures">here</a>.</p> 
+                <p>I am originally from Nepal and enjoy discussions on political, economic, and, more recently, technology policy, in the context of both Nepal and developing countries.</p>
+            </section>
 
-    <p><b>Other Interests:</b> I enjoy reading books (fiction and non-fiction), running, biking, and hiking in the mountains. Be on the lookout for my new blog, where I will describe my adventures hiking in the mountains.</p>
+            <section id="research">
+                <h2>Research</h2>
 
-    <h2>Publications</h2>
+                <h3 id="journal-publications">Journal Publications</h3>
+                <ul class="publications">
+                    <li>
+                        T. E. Gibson, <strong>S. Acharya</strong>, A. Parashar, J. E. Gaudio, and A. Annaswamy, "On the stability of gradient descent with second order dynamics for time-varying cost functions," <i>Transactions on Machine Learning Research</i>, 2025, Journal-to-Conference Certification: Presented at ICLR 2026.
+                    </li>
+                    <li>
+                        T. E. Gibson, Y. Kim, <strong>S. Acharya</strong>, D. E. Kaplan, N. DiBenedetto, R. Lavin, B. Berger, J. R. Allegretti, L. Bry, and G. K. Gerber, "Learning ecosystem-scale dynamics from microbiome data with mdsine2," <i>Nature Microbiology</i>, vol. 10, no. 10, pp. 2550–2564, 2025.
+                    </li>
+                    <li>
+                        Y. Kim, C. J. Worby, <strong>S. Acharya</strong>, L. R. van Dijk, D. Alfonsetti, Z. Gromko, P. N. Azimzadeh, K. W. Dodson, G. K. Gerber, S. J. Hultgren, A. M. Earl, B. Berger, and T. E. Gibson, "Longitudinal profiling of low-abundance strains in microbiomes with chronostrain," <i>Nature Microbiology</i>, vol. 10, no. 5, pp. 1184-1197, 2025.
+                    </li>
+                </ul>
 
-    <h3>Peer-reviewed Journal Publications</h3>
-    <ul class="publications">
-        <li>
-            [1] T. E. Gibson, <strong>S. Acharya</strong>, A. Parashar, J. E. Gaudio, and A. Annaswamy, "On the stability of gradient descent with second order dynamics for time-varying cost functions," <i>Transactions on Machine Learning Research</i>, 2025, Journal-to-Conference Certification: Presented at ICLR 2026.
-        </li>
-        <li>
-            [2] T. E. Gibson, Y. Kim, <strong>S. Acharya</strong>, D. E. Kaplan, N. DiBenedetto, R. Lavin, B. Berger, J. R. Allegretti, L. Bry, and G. K. Gerber, "Learning ecosystem-scale dynamics from microbiome data with mdsine2," <i>Nature Microbiology</i>, vol. 10, no. 10, pp. 2550–2564, 2025.
-        </li>
-        <li>
-            [3] Y. Kim, C. J. Worby, <strong>S. Acharya</strong>, L. R. van Dijk, D. Alfonsetti, Z. Gromko, P. N. Azimzadeh, K. W. Dodson, G. K. Gerber, S. J. Hultgren, A. M. Earl, B. Berger, and T. E. Gibson, "Longitudinal profiling of low-abundance strains in microbiomes with chronostrain," <i>Nature Microbiology</i>, vol. 10, no. 6, pp. 1551–1551, 2025.
-        </li>
-    </ul>
+                <h3 id="conference-publications">Conferences</h3>
+                <ul class="publications">
+                    <li>
+                        <strong>S. Acharya</strong>, T. J. Zhang, A. Kim, R. B. Shrestha, X. Sun, P. Cobben, M. Mordig, J. T. Emmerson, A. Haghighat, F. Danisman, Y. Chen, C. Jose, A. I. Muresanu, J. Cui, J. Liu, Y. Qi, P. S. Pandey, Y. Huang, B. Schölkopf, and Z. Jin, "CauSciBench: Can LLMs automate causal inference in real-world scientific research?," in <i>Forty-third International Conference on Machine Learning</i>, 2026.
+                    </li>
+                </ul>
 
-    <h3>Peer-reviewed Workshops</h3>
-    <ul class="publications">
-        <li>
-            [4] <strong>S. Acharya</strong>, T. J. Zhang, A. Kim, A. Haghighat, S. Xianlin, R. B. Shrestha, M. Mordig, F. Danisman, C. Jose, Y. Qi, P. Cobben, B. Schölkopf, M. Sachan, and Z. Jin, "Causcibench: Assessing LLM causal reasoning for scientific research," in <i>NeurIPS 2025 Workshop on CauScien: Uncovering Causality in Science</i>, 2025.
-        </li>
-        <li>
-            [5] V. Verma, <strong>S. Acharya</strong>, S. Simko, D. Bhardwaj, A. Haghighat, D. Janzing, M. Sachan, Z. Jin, and Y. Yang, "Causal AI scientist: Facilitating causal data science with large language models," in <i>NeurIPS 2025 AI for Science Workshop</i>, 2025.
-        </li>
-        <li>
-            [6] Y. Kim, <strong>S. Acharya</strong>, D. Alfonsetti, G. Gerber, B. Berger, and T. E. Gibson, "Chronostrain: Sequence quality and time-aware strain tracking with shotgun metagenomic data," in <i>ICML Workshop on Computational Biology</i>, 2020.
-        </li>
-    </ul>
+                <h3 id="workshop-publications"> Workshops</h3>
+                <ul class="publications">
+                    <li>
+                        <strong>S. Acharya</strong>, T. J. Zhang, A. Kim, A. Haghighat, S. Xianlin, R. B. Shrestha, M. Mordig, F. Danisman, C. Jose, Y. Qi, P. Cobben, B. Schölkopf, M. Sachan, and Z. Jin, "Causcibench: Assessing LLM causal reasoning for scientific research," in <i>NeurIPS 2025 Workshop on CauScien: Uncovering Causality in Science</i>, 2025.
+                    </li>
+                    <li>
+                        V. Verma, <strong>S. Acharya</strong>, S. Simko, D. Bhardwaj, A. Haghighat, D. Janzing, M. Sachan, Z. Jin, and Y. Yang, "Causal AI scientist: Facilitating causal data science with large language models," in <i>NeurIPS 2025 AI for Science Workshop</i>, 2025.
+                    </li>
+                    <li>
+                        Y. Kim, <strong>S. Acharya</strong>, D. Alfonsetti, G. Gerber, B. Berger, and T. E. Gibson, "Chronostrain: Sequence quality and time-aware strain tracking with shotgun metagenomic data," in <i>ICML Workshop on Computational Biology</i>, 2020.
+                    </li>
+                </ul>
 
-    <h3>Preprints</h3>
-    <ul class="publications">
-        <li>
-            [7] T. E. Gibson and <strong>S. Acharya</strong>, <i>Regret Analysis: A Control Perspective</i>, 2025. <a href="https://arxiv.org/abs/2501.04572">arXiv: 2501.04572</a>.
-        </li>
-    </ul>
+                <h3 id="preprints">Preprints</h3>
+                <ul class="publications">
+                    <li>
+                        T. E. Gibson and <strong>S. Acharya</strong>, <i>Regret Analysis: A Control Perspective</i>, 2025. <a href="https://arxiv.org/abs/2501.04572">arXiv: 2501.04572</a>.
+                    </li>
+                </ul>
+            </section>
 
-    <h2>Working Papers</h2>
-    <ul class="publications">
-        <li>
-            C. Bhandari and <strong>S. Acharya</strong>. <i>Do Civil Wars Influence Voter Participation? A Case Study from Nepal</i>.
-        </li>
-    </ul>
+            <section id="teaching">
+                <h2>Teaching</h2>
+                <ul style="list-style-type: disc; padding-left: 22px;">
+                    <li>Teaching Assistant, Math 21: Integral Calculus and Series, Winter and Spring 2025. Stanford University.</li>
+                    <li>Course Assistant, CME 106: Introduction to Probability and Statistics for Engineers, Summer 2024. Stanford University.</li>
+                    <li>Teaching Assistant, MATH 51: Linear Algebra and Differential Calculus of Several Variables, Autumn 2023 and Winter 2024. Stanford University.</li>
+                    <li>Teaching Assistant, APMA E2000: Multivariable Calculus for Engineers, Fall 2017, Spring 2018, Fall 2018, and Winter 2019. Columbia University.</li>
+                </ul>
+            </section>
 
-    <h2>Teaching Experience</h2>
-    <ul style="list-style-type: disc;">
-        <li>Teaching Assistant, Math 21: Integral Calculus and Series, Winter and Spring 2025. Stanford University.</li>
-        <li>Course Assistant, CME 106: Introduction to Probability and Statistics for Engineers, Summer 2024. Stanford University.</li>
-        <li>Teaching Assistant, MATH 51: Linear Algebra and Differential Calculus of Several Variables, Autumn 2023 and Winter 2024. Stanford University.</li>
-        <li>Teaching Assistant, APMA E2000: Multivariable Calculus for Engineers, Fall 2017, Spring 2018, Fall 2018, and Winter 2019. Columbia University.</li>
-    </ul>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>You can reach me at <a href="mailto:sachar12@jh.edu">sachar12@jh.edu</a>.</p>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
